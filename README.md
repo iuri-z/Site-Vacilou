@@ -1,8 +1,11 @@
-# Site-Vacilou
+# Site 'Vacilou, virou Crônica'
 Um site baseado no projeto do meu amigo Anderson Lietz para postar suas crônicas autorais.
 
-## ✍ Autores
+## ⚡ Autor do código
 > Iuri Zimmermann  
+
+## ✍ Autor do conteúdo
+> Anderson Lietz  
 
 ## ✏ Técnologias Utilizadas 
 |||
