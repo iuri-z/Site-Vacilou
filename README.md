@@ -1,4 +1,4 @@
-#Vacilou, virou Crônica
+# ***Vacilou, virou Crônica***
 Um site baseado no projeto do meu amigo Anderson Lietz para postar suas crônicas autorais.
 
 ## ⚡ Autor do código
