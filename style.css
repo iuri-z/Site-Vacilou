@@ -7,71 +7,72 @@
    font-family: 'Outfit', sans-serif;
 }
 
+:root{
+   --color:rgb(116, 78, 0);
+}
+
+body{
+   display: grid;
+   place-items: center;
+   justify-content: center;
+   min-height: 100vh;
+   font-size: 25px;
+   background-color:white;
+   margin:auto;
+   padding: auto;
+   height: auto;
+   text-decoration: none;
+   position: relative;
+}
+
  .wrapper{
     width: 1170px;
     margin: auto;
  }
- 
- body{
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    font-size: 25px;
-    background-color:white;
-    margin:auto;
-    padding: auto;
-    height: auto;
-    text-decoration: none;
-    position: relative;
- }
- 
+
+ .logo img{
+   width: 180px;
+   float: left;
+   padding-top: 5px;
+}
+
+.logo h1{
+  font-weight: bold;
+  font-size: 60px;
+  text-transform: uppercase;
+  padding-top: 4%;
+}
+
+.logo p{
+   font-size: 20px;
+   padding-bottom: 1%;
+}
+
  .area-de-navegacao{
-    float: right;
-    list-style: none;
-    margin-top: 20px;
-    padding-right: 10px;
+   background-color: rgb(116, 78, 0);
  }
  
  .area-de-navegacao li{
-    display: inline-table;
+   display: inline-table;
+   background-color:rgb(116, 78, 0); 
+   padding: 8px 25px;
+   font-size: 4vh;
  }
- 
+
  .area-de-navegacao li a{
-    color:white; 
-    background-color:rgb(99, 66, 17); 
-    text-align: center;
-    border-radius: 10px;
-    padding: 15px;
-    margin: auto;
-    width: 500px;
-    text-decoration: none;
- }
+   text-decoration: none;
+   color:white; 
+}
  
- .area-de-navegacao li a:hover{
+ .area-de-navegacao li:hover{
     background-color: rgb(133, 108, 71);
     text-decoration: none;
  }
 
- .logo img{
-    width: 250px;
-    float: left;
-    padding-left: 5%;
-    padding-top: 2%;
-    filter: invert(0);
- }
-
  .texto-de-boas-vindas{
      position: relative;
-     margin: 20%, 30%;
      text-align: center;
  }
-
- .texto-de-boas-vindas h1{
-    font-weight: bold;
-    font-size: 60px;
-    text-align: left;
-    text-transform: uppercase;
-}
 
  .texto-de-boas-vindas a{
     padding: 10px 25px;
@@ -86,14 +87,16 @@
 /*Slider*/
 #items-wrapper{
    /*tamanho das imagens*/
-   width: 140vh;
+   width: 180vh;
 }
 
 #items{
    display: flex;
    overflow-x: auto;
-   scroll-snap-type: x mandatory; /*propriedade do css para ajustar a imagem quando usamos a barra no site
-                                    Colocamos uma no parent e outra no children (nesse caso o .item)*/
+   scroll-snap-type: x mandatory;      /*propriedade do css para ajustar a imagem quando usamos a barra no site*/
+   -webkit-overflow-scrolling: touch;  /*Colocamos uma no parent e outra no children (nesse caso o .item)*/
+   scroll-behavior: smooth;
+   background: white;
 }
 
 .item{
@@ -101,6 +104,7 @@
    width: 100%; /*Aqui selecionamos a quantidade de imagens ajustadas para aparecer dentro da janela de slide*/
    height: 400px;
    scroll-snap-align: start;
+   pointer-events: none;
 }
 
 img{
@@ -108,4 +112,196 @@ img{
    width: 100%;
    height: 100%;
    object-fit: cover; /*a imagem vai ficar correto dentro do item*/
+}
+
+ /*Cronicas em cards*/
+.cronicas-grid{
+   display: grid;
+   width: 100rem;
+   grid-gap: 6rem;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   align-items: start;
+}
+
+.grid-item{
+   background-color: white;
+   border-radius: 0.4rem;
+   overflow: hidden;
+   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+   cursor: pointer;
+   transition: 0.2s;
+}
+
+.grid-item:hover{
+   transform: translateY(-0.5%);
+   box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+}
+
+.card-img{
+   display: block;
+   width: 100%;
+   height: 20rem;
+   object-fit: cover;
+}
+
+.card-content{
+   padding-bottom: 3rem;
+}
+
+.card-header{
+   font-size: 3rem;
+   font-weight: 500;
+   color: black;
+   margin-bottom: 1.5rem;
+}
+
+.card-text{
+   font-size: 1.6rem;
+   letter-spacing: 0.1rem;
+   line-height: 1.7;
+   color: gray;
+   margin-bottom: 2.5rem;
+}
+
+.card-btn{
+   display: block;
+   width: 100%;
+   padding: 1.5rem;
+   font-size: 2rem;
+   text-align: center;
+   color: blue;
+   background-color: white;
+   border: none;
+   border-radius: 0.4rem;
+   transition: 0.2s;
+   cursor: pointer;
+   letter-spacing: 0.1rem;
+}
+
+.card-btn span{
+   margin-left: 1rem;
+   transition: 0.2s;
+}
+
+.card-btn:hover,
+.card-btn:active{
+   background-color: white;
+}
+
+.card-btn:hover span,
+.card-btn:active span{
+   margin-left: 1.5rem;
+}
+
+@media only screen and(max-width: 60em){
+   body{
+      padding: 3rem;
+   }
+
+   .cronicas-grid{
+      grid-gap: 3rem;
+   }
+}
+
+/*Sobre*/
+section{
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   background: white;
+}
+.container{
+   width: 100%;
+   max-width: 1160px;
+   margin: 0 auto;
+   padding: 0 20px;
+}
+
+.grid{
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   gap: 2.5rem;
+   align-items: center;
+   justify-content: center;
+}
+.left img{
+   max-width: 100%;
+   height: auto;
+   vertical-align: middle;
+}
+
+.autor{
+   margin-top: 50px;
+   margin-left: 50px;
+   width: 400px;
+   clip-path: circle();
+}
+
+.right > *{
+   margin-bottom: 1.1rem;
+   color: black;
+}
+
+.right h2{
+   font-weight: 600;
+   background: var(--color);
+   display: inline-block;
+   padding: 5px 15px;
+   font-size: 50px;
+   border-radius: 4px;
+}
+
+.right p{
+   text-align: justify;
+   font-size: 18px;
+}
+
+.right a{
+   text-decoration: none;
+   color: black;
+}
+
+#btn{
+   text-decoration: none;
+   display: inline-block;
+   padding: 10px 25px;
+   border: 2px solid var(--color);
+   border-radius: 5px;
+   position: relative;
+   z-index: 1;
+}
+
+#btn::after{
+   content: "";
+   background: var(--color);
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 0;
+   z-index: -1;
+   transition: width .5s ease;
+   font-weight: 600;
+
+}
+
+#btn:hover::after{
+   width: 100%;
+   text-decoration: none;
+}
+@media(max-width:768px){
+   .grid{
+      grid-template-columns: 1fr;
+   }
+}
+
+.bottom{
+   width: 100%;
+   color: white;
+   justify-content: center;
+   display: inline-table;
+   background-color:rgb(41, 41, 40); 
+   padding: 25px 50px;
+   font-size: 2.5vh;
+   margin-inline: 5px;
 }
